@@ -31,7 +31,7 @@ El sistema utiliza 3 tablas relacionadas:
 - **asignaturas** (id_asignatura, nombre, codigo, id_profesor)
 - **alumnos** (id_alumno, rut, nombre, email, id_asignatura, nota)
 
-Ver diagrama completo en: [modelo_relacional.png](modelo_relacional.png)
+Ver diagrama completo en: [CAPTURA_MER.jpg](CAPTURA_MER.jpg)
 
 ## Instrucciones de Instalación
 
