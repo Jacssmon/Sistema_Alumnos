@@ -4,8 +4,8 @@
 
 ## Información del Equipo
 - **Integrantes:** Felipe Quiroga, Simon Stuardo, Jorge Cañas, Alan Droguett.
-- **Curso:** [Tu curso]
-- **Fecha:** Noviembre 2024
+- **Seccion:** 013V
+- **Fecha:** 19-11-2025
 
 ## Descripción del Proyecto
 Sistema de gestión académica desarrollado en Java SE con MySQL que permite administrar información de alumnos, profesores y asignaturas. Implementa operaciones CRUD completas sobre la base de datos mediante interfaz gráfica Swing.
