@@ -1,0 +1,47 @@
+-- Tabla 1: Profesores
+CREATE TABLE profesores (
+    id_profesor INT PRIMARY KEY AUTO_INCREMENT,
+    rut VARCHAR(12) NOT NULL,
+    nombre VARCHAR(100) NOT NULL,
+    especialidad VARCHAR(50)
+);
+
+-- Tabla 2: Asignaturas (relacionada con Profesores)
+CREATE TABLE asignaturas (
+    id_asignatura INT PRIMARY KEY AUTO_INCREMENT,
+    nombre VARCHAR(100) NOT NULL,
+    codigo VARCHAR(20) NOT NULL,
+    id_profesor INT,
+    FOREIGN KEY (id_profesor) REFERENCES profesores(id_profesor)
+        ON DELETE SET NULL
+        ON UPDATE CASCADE
+);
+
+-- Tabla 3: Alumnos (relacionada con Asignaturas)
+CREATE TABLE alumnos (
+    id_alumno INT PRIMARY KEY AUTO_INCREMENT,
+    rut VARCHAR(12) NOT NULL,
+    nombre VARCHAR(100) NOT NULL,
+    email VARCHAR(100),
+    id_asignatura INT,
+    nota DECIMAL(3,1) CHECK (nota >= 1.0 AND nota <= 7.0),
+    FOREIGN KEY (id_asignatura) REFERENCES asignaturas(id_asignatura)
+        ON DELETE SET NULL
+        ON UPDATE CASCADE
+);
+
+-- Datos de ejemplo (opcional)
+INSERT INTO profesores (rut, nombre, especialidad) VALUES
+('11111111-1', 'María González', 'Matemáticas'),
+('22222222-2', 'Pedro Ramírez', 'Física'),
+('33333333-3', 'Ana Torres', 'Química');
+
+INSERT INTO asignaturas (nombre, codigo, id_profesor) VALUES
+('Cálculo I', 'MAT101', 1),
+('Física Mecánica', 'FIS201', 2),
+('Química General', 'QUI101', 3);
+
+INSERT INTO alumnos (rut, nombre, email, id_asignatura, nota) VALUES
+('12345678-9', 'Juan Pérez', 'juan@mail.com', 1, 6.5),
+('98765432-1', 'Laura Silva', 'laura@mail.com', 1, 5.8),
+('11223344-5', 'Carlos Rojas', 'carlos@mail.com', 2, 6.0);
