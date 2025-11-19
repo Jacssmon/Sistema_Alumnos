@@ -1,2 +1,2 @@
 # Sistema_Alumnos
-Sistema de Sestion academica con JAVA y MySQL
+Sistema de Gestion academica con JAVA y MySQL. Uso de Swing
